@@ -1,0 +1,166 @@
+.item-container {
+    margin-right: 30px;
+    display: inline-block;
+}
+
+.main-container {
+    padding-left: 30px;
+}
+
+.filter-row {
+}
+
+.filter-row button {
+    float: right;
+    border: none;
+}
+
+.filter-row button:focus {
+    outline: none;
+}
+
+.filter-row .text-input-regular {
+    margin-right: 31px;
+    float: right;
+    width: 234px;
+    height: 35px;
+    color: #999999;
+    font-family: "PT Sans", sans-serif;
+    font-size: 14px;
+    font-style: italic;
+    background: url(../images/common/finder.png) no-repeat scroll;
+    background-color: #ffffff;
+    background-position: 99% 50%;
+}
+
+.filter-row .primary-btn-regular {
+    margin-right: 16px;
+}
+
+
+@media (min-width: 1000px) {
+    .container {
+        width: 1200px;
+    }
+}
+
+@media (min-width: 480px) and (max-width: 799px) {
+    /* Comment this and uncomment transition at commons.css to change popup behaviour */
+    .popup-overlay {
+        padding-left: 30px;
+        width: 100%;
+        right: 0;
+    }
+
+    .popup {
+        width: 100%;
+        height: auto;
+    }
+
+    .popup-top {
+        height: auto;
+        border-bottom: none;
+    }
+
+    .popup-inlined {
+        float: none;
+        border-bottom: 1px solid #2e8879;
+        padding-bottom: 16px;
+        padding-top: 16px;
+    }
+
+    .popup-top > .popup-inlined:first-child {
+        padding-top: 0;
+    }
+
+    .popup > .popup-inlined {
+        border-bottom: none;
+    }
+
+    .popup > .popup-inlined:last-child {
+        margin-top: 16px;
+        border-top: 1px solid #2e8879;
+    }
+
+    .gender {
+        padding-left: 0;
+        margin: 0;
+    }
+
+    #price-slider-range {
+        width: auto;
+    }
+
+    .item-container {
+        width: 100%;
+        height: auto;
+    }
+
+    .item-container > img {
+        width: 100%;
+    }
+
+    .item-container .starline {
+        top: -35px;
+        position: relative;
+        width: auto;
+        max-width: 100%;
+    }
+
+    .item-container .starline img:first-child {
+        margin-left: 16px;
+    }
+
+    .item-container-content {
+        display: block;
+        width: 100%;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .item-container-content p {
+        width: 100%;
+    }
+}
+
+@media (min-width: 800px) and (max-width: 999px) {
+    .container {
+        max-width: 999px;
+        width: 100%;
+    }
+
+    .main-container {
+        padding-right: 0;
+    }
+
+    .item-container {
+        width: 46%;
+        height: auto;
+    }
+
+    .item-container > img {
+        width: 100%;
+    }
+
+    .item-container .starline {
+        top: -35px;
+        position: relative;
+        width: auto;
+        max-width: 100%;
+    }
+
+    .item-container .starline img:first-child {
+        margin-left: 16px;
+    }
+
+    .item-container-content {
+        display: block;
+        width: 100%;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .item-container-content p {
+        width: 100%;
+    }
+}

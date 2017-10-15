@@ -1,0 +1,28 @@
+.upper-margin {
+    margin: 0 auto;
+    min-height: 50px;
+}
+
+/* Required to remove a space between inline-block elements'  */
+.figure-line {
+    font-size: 0;
+}
+
+.figure-line img {
+    display: inline-block;
+    width: 50%;
+    height: auto;
+}
+
+.manager-content {
+    height: 100vh;
+}
+
+/* For devices larger than 800px */
+@media (min-width: 480px) and (max-width: 800px) {
+    .figure-line img {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+}

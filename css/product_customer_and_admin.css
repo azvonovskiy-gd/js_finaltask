@@ -1,0 +1,341 @@
+.upper-margin {
+    margin-top: 0;
+    padding-top: 72px;
+    padding-bottom: 72px;
+}
+
+.product-content {
+    margin-left: 31px;
+    margin-right: 31px;
+    height: 100vh;
+}
+
+.category-title {
+    height: 105px;
+    color: #ffffff;
+    font-family: PTSans, sans-serif;
+    font-size: 16px;
+    text-align: left;
+}
+
+.category-title a {
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.category-title span {
+    float: right;
+}
+
+.category-name {
+    font-weight: bold;
+    color: #ffffff;
+}
+
+/* Item container */
+.item-container {
+    position: relative;
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 16px;
+    padding-bottom: 25px;
+    width: auto;
+    height: auto;
+    min-height: 390px;
+    max-height: 38%;
+    max-width: 95%;
+}
+
+.item-container > * {
+    vertical-align: top;
+}
+
+.item-container-image {
+    display: inline-block;
+    height: auto;
+    width: auto;
+    max-width: 50%;
+}
+
+.item-container-image img {
+    width: auto;
+    max-width: 100%;
+    height: auto;
+}
+
+.item-container .starline {
+    top: -35px;
+    position: relative;
+    width: auto;
+    max-width: 100%;
+}
+
+.item-container .starline img:first-child {
+    margin-left: 16px;
+}
+
+.item-container-content {
+    display: inline-block;
+    position: absolute;
+    margin-left: 24px;
+    width: auto;
+    height: 100%;
+    max-width: 45%;
+}
+
+.item-container .textual {
+    width: auto;
+    height: auto;
+}
+
+.bottom-aligner {
+    display: inline-block;
+    height: 100%;
+    vertical-align: bottom;
+    width: 3px;
+    background: red;
+}
+
+.item-container .details {
+    position: absolute;
+    bottom: 10%;
+    display: block;
+    width: 100%;
+    border-top: 1px solid #d6d6d6;
+    padding-top: 12px;
+    height: 50px;
+}
+
+.item-container-content h1 {
+    padding-bottom: 27px;
+    border-bottom: 2px solid #3fc6cc;
+    color: #000000;
+    font-family: 'PT Sans', sans-serif;
+    font-weight: 700;
+    line-height: normal;
+    font-size: 24px;
+    text-align: left;
+}
+
+.item-container-content p {
+    width: auto;
+    color: #000000;
+    font-family: 'PT Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 100%;
+    overflow: hidden;
+    text-align: left;
+}
+
+.item-container-content .primary-btn-regular {
+    float: right;
+}
+
+.item-container-content .price {
+    font-family: "PT Sans", sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    display: inline;
+    color: #288575;
+}
+
+.item-container-content .price span {
+    color: #000000;
+}
+
+.item-container-content .price > span:last-child {
+    font-size: 16px;
+    font-weight: 700;
+    text-align: left;
+}
+
+.item-container-content .price > span:last-child.redish {
+    color: #ff0000;
+}
+
+.invisible-star {
+    display: none;
+}
+
+.light-hatching {
+    background: #ffffff url(../images/common/hatching.png) fixed;
+}
+
+.textual > p > a {
+    background-color: inherit;
+    color: #288575;
+}
+
+.blur {
+    filter: blur(5px) brightness(75%);
+}
+
+/* Some modals */
+.admin-modal {
+    position: absolute;
+    top: 150px;
+    width: 100%;
+    height: 678px;
+    transition: opacity 500ms;
+
+    display: none;
+    opacity: 1;
+    z-index: 3;
+    pointer-events: auto;
+}
+
+.vertical-center-modal {
+    top: 40%;
+}
+
+.modal-form {
+    width: 730px;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.modal-form h1 {
+    height: 68px;
+    line-height: 68px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.form-content {
+    padding: 0 5%;
+    padding-left: 27px;
+    padding-right: 27px;
+}
+
+.form-content p {
+    padding-top: 44px;
+    font-family: "PT Sans Caption", sans-serif;
+    font-size: 24px;
+    line-height: 32px;
+    text-align: center;
+}
+
+.form-dropdown-white {
+    width: 291px;
+    background: url("../images/common/dropdown-arrow-green.png") no-repeat scroll;
+    background-color: #ffffff;
+    background-position: 95% 50%;
+    cursor: pointer;
+    outline: none;
+
+    color: #000000;
+}
+
+.edit-column {
+    width: auto;
+}
+
+.edit-column > input {
+    display: block;
+    width: 291px;
+}
+
+.edit-column > img {
+    width: 343px;
+}
+.popup-overlay-visible {
+    display: block;
+    opacity: 1;
+    /* This is needed for element to not take any space */
+    margin-top: -100px;
+    margin-left: -100px;
+}
+
+
+.gender {
+    margin: 0;
+    margin-top: 20px;
+    padding-left: 0;
+}
+
+/* Buttons */
+.btn {
+    margin-left: 25px;
+}
+
+/* For devices larger than 800px */
+@media (min-width: 480px) and (max-width: 800px) {
+    .container {
+        max-width: 800px;
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+
+    .item-container {
+        width: auto;
+        min-height: inherit;
+        max-height: none;
+    }
+
+    .item-container-image {
+        display: block;
+        height: auto;
+        width: auto;
+        max-width: 100%;
+    }
+
+    .item-container-image > img {
+        width: 100%;
+    }
+
+    .item-container-content {
+        display: block;
+        position: initial;
+        margin-left: 0;
+        width: auto;
+        height: 100%;
+        max-width: 100%;
+    }
+
+    .item-container .details {
+        position: static;
+        bottom: 10%;
+        display: block;
+        width: 100%;
+        border-top: 1px solid #d6d6d6;
+        padding-top: 12px;
+        height: 50px;
+    }
+
+    .form-dropdown {
+        width: 100%;
+    }
+
+    .edit-column {
+        width: 100%;
+    }
+
+    .edit-column > input {
+        width: 100%;
+    }
+
+    .edit-column > img {
+        width: 100%;
+    }
+
+    textarea {
+        width: 100%;
+    }
+
+    /* Modal */
+    .modal-form {
+        width: 100%;
+    }
+
+    .modal-form h1 {
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+
+    .ecuit-modal {
+        width: 730px;
+        height: 100%;
+    }
+}
