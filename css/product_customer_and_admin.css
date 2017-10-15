@@ -51,16 +51,40 @@
 }
 
 .item-container-image {
+    position: relative;
     display: inline-block;
     height: auto;
     width: auto;
     max-width: 50%;
 }
 
-.item-container-image img {
+.item-container-image .item-image {
     width: auto;
     max-width: 100%;
     height: auto;
+}
+
+.scroll-image-left {
+    height: auto;
+    min-height: 15%;
+    max-height: 25%;
+    width: auto;
+    max-width: 15%;
+    bottom: 50%;
+    left: 0;
+    position: absolute;
+}
+
+.scroll-image-right {
+    height: auto;
+    min-height: 15%;
+    max-height: 25%;
+    width: auto;
+    max-width: 15%;
+    transform: rotate(180deg);
+    bottom: 50%;
+    right: 0;
+    position: absolute;
 }
 
 .item-container .starline {
@@ -338,4 +362,27 @@
         width: 730px;
         height: 100%;
     }
+}
+
+@keyframes fadeout {
+    0% {opacity:1;}
+    100% {opacity:0;}
+}
+
+@keyframes fadein {
+    0% {opacity:0;}
+    100% {opacity:1;}
+}
+
+.fadeOut {
+    opacity:0;
+    -moz-animation   : fadeout 1s linear;
+    -webkit-animation: fadeout 1s linear;
+    animation        : fadeout 1s linear;
+}
+.fadeIn {
+    opacity:1;
+    -moz-animation   : fadein 1s linear;
+    -webkit-animation: fadein 1s linear;
+    animation        : fadein 1s linear;
 }
