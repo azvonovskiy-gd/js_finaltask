@@ -21,24 +21,30 @@ function setNextImage() {
     }
 
     imageElement.classList.add('fadeOut');
-    var timer = setInterval(function () {imageElement.src = imagesArray[currentImageIndex];
-        imageElement.classList.remove('fadeOut');
-    clearInterval(timer)}, 1000);
 
-    var timer2 = setInterval(function () {
+    setTimeout(function () {
+        imageElement.src = imagesArray[currentImageIndex];
+        imageElement.classList.remove('fadeOut');
         imageElement.classList.add('fadeIn');
-        clearInterval(timer2);
-    }, 1000);
+    }, 100);
 }
 
 function setPreviousImage() {
+    imageElement.classList.remove('fadeOut');
+    imageElement.classList.remove('fadeIn');
     if(currentImageIndex == 0) {
         currentImageIndex = 2;
     } else {
         --currentImageIndex;
     }
 
-    imageElement.src = imagesArray[currentImageIndex];
+    imageElement.classList.add('fadeOut');
+
+    setTimeout(function () {
+        imageElement.src = imagesArray[currentImageIndex];
+        imageElement.classList.remove('fadeOut');
+        imageElement.classList.add('fadeIn');
+    }, 100);
 }
 
 leftArrow.addEventListener('click', setPreviousImage);

@@ -366,23 +366,23 @@
 
 @keyframes fadeout {
     0% {opacity:1;}
-    100% {opacity:0;}
+    100% {opacity:0.5;}
 }
 
 @keyframes fadein {
-    0% {opacity:0;}
+    0% {opacity:0.5;}
     100% {opacity:1;}
 }
 
 .fadeOut {
     opacity:0;
-    -moz-animation   : fadeout 1s linear;
-    -webkit-animation: fadeout 1s linear;
-    animation        : fadeout 1s linear;
+    -moz-animation   : fadeout 0.2s linear;
+    -webkit-animation: fadeout 0.2s linear;
+    animation        : fadeout 0.2s linear;
 }
 .fadeIn {
     opacity:1;
-    -moz-animation   : fadein 1s linear;
-    -webkit-animation: fadein 1s linear;
-    animation        : fadein 1s linear;
+    -moz-animation   : fadein 0.2s linear;
+    -webkit-animation: fadein 0.2s linear;
+    animation        : fadein 0.2s linear;
 }
