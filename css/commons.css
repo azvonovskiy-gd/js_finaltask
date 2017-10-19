@@ -637,6 +637,12 @@ input:checked + .slider:before {
     width: 360px;
 }
 
+.watermark {
+    background-image: url('../images/product/watermark.png');
+    background-position: 50px 50px;
+    z-index : 1000; /*Sets element above everything else (only works on absolute and fixed position elements)*/
+}
+
 .item-container .starline {
     position: absolute;
     top: 214px;

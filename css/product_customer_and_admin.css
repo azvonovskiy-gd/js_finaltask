@@ -64,6 +64,14 @@
     height: auto;
 }
 
+#watermark
+{
+    position:absolute;
+    top: 0;
+    right: 10px;
+    z-index:99;
+}
+
 .scroll-image-left {
     height: auto;
     min-height: 15%;
