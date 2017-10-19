@@ -116,6 +116,18 @@
     z-index: 5;
 }
 
+.pointer-magnifier-overlay {
+    position: absolute;
+    width:150px;
+    height:200px;
+    display:none;
+    pointer-events: none;
+    background-color: #ffffff;
+    border: 1px solid #ffff00;
+    z-index: 5;
+    opacity: 0.5;
+}
+
 .item-container .starline {
     top: -35px;
     position: relative;

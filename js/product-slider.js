@@ -4,7 +4,8 @@ var imageElement = document.querySelector(".item-image");
 var textElement = document.querySelector(".scrolling-text");
 var leftArrow = document.querySelector(".scroll-image-left");
 var rightArrow = document.querySelector(".scroll-image-right");
-var overlayElement = document.querySelector(".magnifier-overlay");
+var magnifierOverlayElement = document.querySelector(".magnifier-overlay");
+var mouseOverlayElement = document.querySelector(".pointer-magnifier-overlay");
 
 var imagesArray = ["images/product/1.jpg",
     "images/product/2.jpg",
@@ -32,7 +33,7 @@ function setNextImage() {
     setTimeout(function () {
         imageElement.src = imagesArray[currentImageIndex];
         textElement.textContent = imageTextArray[currentImageIndex];
-        overlayElement.style.backgroundImage = "url('" + imagesArray[currentImageIndex] + "')";
+        magnifierOverlayElement.style.backgroundImage = "url('" + imagesArray[currentImageIndex] + "')";
         imageElement.classList.remove('fadeOut');
         imageElement.classList.add('fadeIn');
         textElement.classList.remove('moving-left');
@@ -54,7 +55,7 @@ function setPreviousImage() {
     setTimeout(function () {
         imageElement.src = imagesArray[currentImageIndex];
         textElement.textContent = imageTextArray[currentImageIndex];
-        overlayElement.style.backgroundImage = "url('" + imagesArray[currentImageIndex] + "')";
+        magnifierOverlayElement.style.backgroundImage = "url('" + imagesArray[currentImageIndex] + "')";
         imageElement.classList.remove('fadeOut');
         imageElement.classList.add('fadeIn');
         textElement.classList.remove('moving-right');
@@ -62,16 +63,29 @@ function setPreviousImage() {
 }
 
 function zoomIn(event) {
-    overlayElement.style.display = "inline-block";
     var zoom = window.outerWidth / window.document.documentElement.clientWidth;
 
     var posX = event.offsetX ? (event.offsetX) : event.pageX - imageElement.offsetLeft;
     var posY = event.offsetY ? (event.offsetY) : event.pageY - imageElement.offsetTop;
-    overlayElement.style.backgroundPosition = (-posX * 1.3) * zoom + "px " + (-posY * 1.3) * zoom + "px";
+
+    if (posX > imageElement.clientWidth * 0.12 && posX < imageElement.clientWidth * 0.88
+        && posY > imageElement.clientHeight * 0.3 && posY < imageElement.clientHeight * 0.7)
+    {
+        mouseOverlayElement.style.left = posX - mouseOverlayElement.clientWidth / 2 + "px";
+        mouseOverlayElement.style.top = posY - mouseOverlayElement.clientHeight / 2 + "px";
+    }
+
+    mouseOverlayElement.style.width = magnifierOverlayElement.clientWidth / 1.4 + "px";
+    mouseOverlayElement.style.height = magnifierOverlayElement.clientHeight / 1.4 + "px";
+    mouseOverlayElement.style.display = "inline-block";
+
+    magnifierOverlayElement.style.display = "inline-block";
+    magnifierOverlayElement.style.backgroundPosition = (-posX * 1.1) * zoom + "px " + (-posY * 0.8) * zoom + "px";
 }
 
 function zoomOut() {
-    overlayElement.style.display = "none";
+    magnifierOverlayElement.style.display = "none";
+    mouseOverlayElement.style.display = "none";
 }
 
 leftArrow.addEventListener('click', setPreviousImage);
