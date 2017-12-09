@@ -21,7 +21,7 @@ function setNextImage() {
     imageElement.classList.remove('fadeOut');
     imageElement.classList.remove('fadeIn');
     imageElement.style.opacity = 1;
-    if(currentImageIndex === 2) {
+    if (currentImageIndex === 2) {
         currentImageIndex = 0;
     } else {
         ++currentImageIndex;
@@ -43,7 +43,7 @@ function setNextImage() {
 function setPreviousImage() {
     imageElement.classList.remove('fadeOut');
     imageElement.classList.remove('fadeIn');
-    if(currentImageIndex === 0) {
+    if (currentImageIndex === 0) {
         currentImageIndex = 2;
     } else {
         --currentImageIndex;
@@ -63,24 +63,31 @@ function setPreviousImage() {
 }
 
 function zoomIn(event) {
-    var zoom = window.outerWidth / window.document.documentElement.clientWidth;
+    var boostX = imageElement.naturalWidth / imageElement.clientWidth;
+    var boostY = imageElement.naturalHeight / imageElement.clientHeight;
 
     var posX = event.offsetX ? (event.offsetX) : event.pageX - imageElement.offsetLeft;
     var posY = event.offsetY ? (event.offsetY) : event.pageY - imageElement.offsetTop;
+    var zoomerWidth = magnifierOverlayElement.clientWidth / boostX;
+    var zoomerHeight = magnifierOverlayElement.clientHeight / boostY;
 
-    if (posX > imageElement.clientWidth * 0.12 && posX < imageElement.clientWidth * 0.88
-        && posY > imageElement.clientHeight * 0.3 && posY < imageElement.clientHeight * 0.7)
-    {
-        mouseOverlayElement.style.left = posX - mouseOverlayElement.clientWidth / 2 + "px";
-        mouseOverlayElement.style.top = posY - mouseOverlayElement.clientHeight / 2 + "px";
-    }
-
-    mouseOverlayElement.style.width = magnifierOverlayElement.clientWidth / 1.4 + "px";
-    mouseOverlayElement.style.height = magnifierOverlayElement.clientHeight / 1.4 + "px";
+    mouseOverlayElement.style.width = zoomerWidth + "px";
+    mouseOverlayElement.style.height = zoomerHeight + "px";
     mouseOverlayElement.style.display = "inline-block";
 
     magnifierOverlayElement.style.display = "inline-block";
-    magnifierOverlayElement.style.backgroundPosition = (-posX * 1.1) * zoom + "px " + (-posY * 0.8) * zoom + "px";
+
+
+    if (posX > zoomerWidth / 2 && posX < imageElement.clientWidth - zoomerWidth / 2) {
+        mouseOverlayElement.style.left = posX - mouseOverlayElement.clientWidth / 2 + "px";
+        magnifierOverlayElement.style.backgroundPositionX = -posX * boostX + zoomerWidth + "px";
+    }
+    if (posY > zoomerHeight / 2 && posY < imageElement.clientHeight - zoomerHeight / 2) {
+        mouseOverlayElement.style.top = posY - mouseOverlayElement.clientHeight / 2 + "px";
+        magnifierOverlayElement.style.backgroundPositionY = -posY * boostY + zoomerHeight + "px";
+    }
+
+
 }
 
 function zoomOut() {
