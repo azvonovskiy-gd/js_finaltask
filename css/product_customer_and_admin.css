@@ -7,7 +7,7 @@
 .product-content {
     margin-left: 31px;
     margin-right: 31px;
-    height: 100vh;
+    min-height: 100vh;
 }
 
 .category-title {
@@ -236,6 +236,94 @@
 .textual > p > a {
     background-color: inherit;
     color: #288575;
+}
+
+.no-review-paragraph {
+    color: #ffffff;
+    font-family: "PT Sans", sans-serif;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+}
+
+.review-span {
+    cursor: pointer;
+    color: #ffdf00;
+    text-decoration: underline;
+}
+
+.review-container {
+    display: none;
+    margin: 0 auto;
+    width: auto;
+    max-width: 95%;
+}
+
+.add-review-cap {
+    color: #FFFFFF;
+    font-family: "PT Sans", sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.add-review-head {
+    height: 155px;
+    background-color: rgba(0,0,0,0.7);
+}
+
+.add-review-head-container {
+    padding: 15px;
+}
+
+.username-paragraph {
+    color: #FFFFFF;
+    font-family: "PT Sans", sans-serif;
+    font-size: 14px;
+    line-height: 19px;
+}
+
+.username-span {
+    color: #ffdf00;
+    font-style: italic;
+}
+
+.avatar {
+    box-sizing: border-box;
+    height: 79px;
+    width: 79px;
+    border: 1px solid #FFCC00;
+    float: left;
+}
+
+.user-review-paragraph {
+    margin-left: 100px;
+    opacity: 0.5;
+    color: #FFFFFF;
+    font-family: "PT Sans", sans-serif;
+    font-size: 14px;
+    font-style: italic;
+    line-height: 19px;
+}
+
+.edit-review-label {
+    position: absolute;
+    margin-left: -90px; /* Half the width to center it*/
+    bottom: -40px;
+    left: 50%;
+    font-family: "PT Sans", sans-serif;
+    text-align: center;
+    line-height: 35px;
+    height: 40px;
+    width: 180px;
+    border: 3px solid #3FC5CB;
+    border-radius: 15px;
+    background-color: #FFFFFF;
+}
+
+.add-review-body {
+    height: 300px;
+    margin-bottom: 150px;
+    border: 3px solid #3FC5CB;
 }
 
 .blur {
