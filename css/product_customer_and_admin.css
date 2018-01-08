@@ -253,6 +253,7 @@
 }
 
 .review-container {
+    position: relative;
     display: none;
     margin: 0 auto;
     width: auto;
@@ -287,12 +288,58 @@
     font-style: italic;
 }
 
+.label-span {
+    display: block;
+    font-weight: bold;
+}
+
 .avatar {
     box-sizing: border-box;
     height: 79px;
     width: 79px;
     border: 1px solid #FFCC00;
     float: left;
+}
+
+.avatar-input{
+    display: block;
+    position: relative;
+    overflow: hidden;
+    font-size: 1em;
+    line-height: 2em;
+    border: 1px solid #dad9d7;
+    padding: 11px;
+    height: 100px;
+    width: 235px;
+    border-radius: 15px;
+    background-color: #FFFFFF;
+}
+.avatar-input > mark{
+    display: block;
+    cursor: pointer;
+}
+.avatar-input > mark{
+    background: transparent;
+    padding-left: 1em;
+}
+
+.avatar-input input[type=file]{
+    position: absolute;
+    top: 0;
+    opacity: 0
+}
+
+.avatar-span {
+    display: block;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.avatar-file {
+    position: absolute;
+    right: 10px;
+    border: none;
 }
 
 .user-review-paragraph {
@@ -308,9 +355,10 @@
 .edit-review-label {
     position: absolute;
     margin-left: -90px; /* Half the width to center it*/
-    bottom: -40px;
+    top: 200px;
     left: 50%;
     font-family: "PT Sans", sans-serif;
+    font-weight: bold;
     text-align: center;
     line-height: 35px;
     height: 40px;
@@ -326,6 +374,33 @@
     border: 3px solid #3FC5CB;
 }
 
+.add-review-content {
+    padding: 30px 25px 25px 30px;
+}
+
+.add-review-content .text-input {
+    width: 235px;
+}
+
+.add-review-left {
+    display: inline-block;
+    width: auto;
+    max-width: 30%;
+}
+
+.add-review-right {
+    display: inline-block;
+    width: auto;
+    max-width: 50%;
+    position: absolute;
+    height: 100%;
+    padding-left: 25px;
+}
+
+.review-text {
+    width: 100%;
+}
+
 .blur {
     filter: blur(5px) brightness(75%);
 }
@@ -337,7 +412,6 @@
     width: 100%;
     height: 678px;
     transition: opacity 500ms;
-
     display: none;
     opacity: 1;
     z-index: 3;

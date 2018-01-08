@@ -77,7 +77,6 @@ function zoomIn(event) {
 
     magnifierOverlayElement.style.display = "inline-block";
 
-
     if (posX > zoomerWidth / 2 && posX < imageElement.clientWidth - zoomerWidth / 2) {
         mouseOverlayElement.style.left = posX - mouseOverlayElement.clientWidth / 2 + "px";
         magnifierOverlayElement.style.backgroundPositionX = -posX * boostX + zoomerWidth + "px";
@@ -86,8 +85,6 @@ function zoomIn(event) {
         mouseOverlayElement.style.top = posY - mouseOverlayElement.clientHeight / 2 + "px";
         magnifierOverlayElement.style.backgroundPositionY = -posY * boostY + zoomerHeight + "px";
     }
-
-
 }
 
 function zoomOut() {
